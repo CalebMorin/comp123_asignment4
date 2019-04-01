@@ -6,10 +6,42 @@ using System.Threading.Tasks;
 
 namespace Assignment4_Comp123_Group001
 {
-    class Program
+    //Interfaces
+    interface IDrawable
     {
-        static void Main(string[] args)
-        {
-        }
+
+    }
+    interface IWritable
+    {
+
+    }
+    
+    //***Classes***
+    //Parent class
+    abstract class Primitive
+    {
+        
+    }
+    //Child classes
+    class DrawableRectangle : Primitive
+    {
+
+    }
+    class DrawableEllipse : Primitive
+    {
+
+    }
+    class DrawableArc : Primitive
+    {
+
+    }
+    //(Han) Solo classes
+    class DrawableBezier
+    {
+
+    }
+    class DrawableLine
+    {
+
     }
 }
