@@ -95,7 +95,16 @@ namespace Assignment4
         }
         public void Draw(Graphics g)
         {
-
+            if(filled == true)
+            {
+                SolidBrush brushRect = new SolidBrush(color);
+                g.FillRectangle(brushRect, boundingRectangle);
+            }
+            else
+            {
+                Pen penRect = new Pen(color);
+                g.DrawRectangle(penRect, boundingRectangle);
+            }
         }
         public void Write(TextWriter writer)
         {
@@ -119,7 +128,16 @@ namespace Assignment4
         }
         public void Draw(Graphics g)
         {
-
+            if (filled == true)
+            {
+                SolidBrush brushEllipse = new SolidBrush(color);
+                g.FillRectangle(brushEllipse, boundingRectangle);
+            }
+            else
+            {
+                Pen penEllipse = new Pen(color);
+                g.DrawRectangle(penEllipse, boundingRectangle);
+            }
         }
         public double Area()
         {
@@ -141,7 +159,8 @@ namespace Assignment4
         }
         public void Draw(Graphics g)
         {
-
+            Pen penLine = new Pen(color);
+            g.DrawLine(penLine, lineStart, lineEnd);
         }
         public void Write(TextWriter writer)
         {
@@ -168,7 +187,8 @@ namespace Assignment4
         }
         public void Draw(Graphics g)
         {
-
+            Pen penBezier = new Pen(color);
+            g.DrawBezier(penBezier, curveStart, controlFirst, controlSecond, curveEnd);
         }
         public void Write(TextWriter writer)
         {
@@ -191,7 +211,8 @@ namespace Assignment4
         }
         public void Draw(Graphics g)
         {
-
+            Pen penArc = new Pen(color);
+            g.DrawArc(penArc, boundingRectangle, start, end);
         }
         public void Write(TextWriter writer)
         {
