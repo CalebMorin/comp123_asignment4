@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
+using static System.Console;
 
 namespace Assignment4
 {
@@ -96,9 +97,11 @@ namespace Assignment4
         {
 
         }
-        public void Writer(TextWriter writer)
+        public void Write(TextWriter writer)
         {
-
+            WriteLine(this.color);
+            WriteLine(this.filled);
+            WriteLine(this.boundingRectangle);
         }
         public double Area()
         {
@@ -110,7 +113,9 @@ namespace Assignment4
     {
         public DrawableEllipse(Color color, bool filled, Rectangle rectangle) : base(color, filled, rectangle)
         {
-
+            this.color = color;
+            this.filled = filled;
+            this.boundingRectangle = rectangle;
         }
         public void Draw(Graphics g)
         {
@@ -130,7 +135,9 @@ namespace Assignment4
 
         public DrawableLine(Color color, Point start, Point end)
         {
-
+            this.color = color;
+            this.lineStart = start;
+            this.lineEnd = end;
         }
         public void Draw(Graphics g)
         {
@@ -138,7 +145,9 @@ namespace Assignment4
         }
         public void Write(TextWriter writer)
         {
-
+            WriteLine(this.color);
+            WriteLine(this.lineStart);
+            WriteLine(this.lineEnd);
         }
     }
     class DrawableBezier : IDrawable, IWritable
@@ -151,7 +160,11 @@ namespace Assignment4
 
         public DrawableBezier(Color color, Point start, Point first, Point second, Point end)
         {
-
+            this.color = color;
+            this.curveStart = start;
+            this.controlFirst = first;
+            this.controlSecond = second;
+            this.curveEnd = end;
         }
         public void Draw(Graphics g)
         {
@@ -159,7 +172,11 @@ namespace Assignment4
         }
         public void Write(TextWriter writer)
         {
-
+            WriteLine(this.color);
+            WriteLine(this.curveStart);
+            WriteLine(this.controlFirst);
+            WriteLine(this.controlSecond);
+            WriteLine(this.curveEnd);
         }
     }
     class DrawableArc : Primitive, IDrawable, IWritable
@@ -178,7 +195,9 @@ namespace Assignment4
         }
         public void Write(TextWriter writer)
         {
-
+            WriteLine(this.color);
+            WriteLine(this.filled);
+            WriteLine(this.boundingRectangle);
         }
     }
 }
